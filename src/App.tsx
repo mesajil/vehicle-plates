@@ -1,9 +1,12 @@
+import FullWidthContainer from './components/Containers/FullWithContainer'
 import QuickView from './components/QuickView'
 
 function App() {
   return (
     <>
-      <QuickView />
+      <FullWidthContainer>
+        <QuickView />
+      </FullWidthContainer>
     </>
   )
 }
