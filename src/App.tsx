@@ -1,7 +1,9 @@
+import QuickView from './components/QuickView'
+
 function App() {
   return (
     <>
-      <div>Hello Vite</div>
+      <QuickView />
     </>
   )
 }
