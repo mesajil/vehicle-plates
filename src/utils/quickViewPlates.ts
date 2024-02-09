@@ -1,15 +1,41 @@
-const plates = [
-  '1234 ABC',
-  '5678 DEF',
-  '9012 GHI',
-  '3456 JKL',
-  '7890 MNO',
-  '2345 PQRS',
-  '6789 TUV',
-  '0123 WXYZ',
-  '4567 ABCD',
-  '8901 EFGH',
+export interface Plate {
+  text: string
+  color?: string
+}
+
+export const colors = [
+  'red',
+  'yellow',
+  'green',
+  'blue',
+  'white',
+  'gray',
+  'orange',
 ]
 
-const quickViewText = plates.join(', ')
-export default quickViewText
+const plates: Plate[] = [
+  {text: '1234 ABC', color: colors[Math.floor(Math.random() * colors.length)]},
+  {text: ' 5678 DEF', color: colors[Math.floor(Math.random() * colors.length)]},
+  {text: ' 9012 GHI', color: colors[Math.floor(Math.random() * colors.length)]},
+  {text: ' 3456 JKL', color: colors[Math.floor(Math.random() * colors.length)]},
+  {text: ' 7890 MNO', color: colors[Math.floor(Math.random() * colors.length)]},
+  {
+    text: ' 2345 PQRS',
+    color: colors[Math.floor(Math.random() * colors.length)],
+  },
+  {text: ' 6789 TUV', color: colors[Math.floor(Math.random() * colors.length)]},
+  {
+    text: ' 0123 WXYZ',
+    color: colors[Math.floor(Math.random() * colors.length)],
+  },
+  {
+    text: ' 4567 ABCD',
+    color: colors[Math.floor(Math.random() * colors.length)],
+  },
+  {
+    text: ' 8901 EFGH',
+    color: colors[Math.floor(Math.random() * colors.length)],
+  },
+]
+
+export default plates
