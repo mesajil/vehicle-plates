@@ -8,11 +8,12 @@ interface PlateProps {
 }
 
 export const Plate = styled.div<PlateProps>`
-  padding: ${props => props.padding || '5px 6px 2px 6px'};
-  border: ${props => props.border || '2px ridge gray'};
+  padding: ${props => props.padding || '4px 12px 0px 12px'};
+  border: ${props => props.border || '3px ridge gray'};
+  border-radius: 7px;
   margin: ${props => props.margin || '0'};
   background-color: ${props => props.backgroundColor || 'red'};
-  border-radius: 3px;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
   font-family: 'LICENSE PLATE USA', sans-serif;
   font-weight: bold;
   text-shadow: 0px 1px 2px #919191;
