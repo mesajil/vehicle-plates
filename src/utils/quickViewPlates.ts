@@ -3,15 +3,7 @@ export interface Plate {
   color?: string
 }
 
-export const colors = [
-  'red',
-  'yellow',
-  'green',
-  'blue',
-  'white',
-  'gray',
-  'orange',
-]
+export const colors = ['red', 'yellow', 'green', 'blue', 'white', 'gray']
 
 const plates: Plate[] = [
   {text: '1234 ABC', color: colors[Math.floor(Math.random() * colors.length)]},

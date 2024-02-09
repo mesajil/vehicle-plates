@@ -5,6 +5,7 @@ import examplePlates, {
   Plate as PlateType,
   colors,
 } from '../../utils/quickViewPlates'
+import TextArea from '../TextArea'
 
 const QuickView = () => {
   const [plates, setPlates] = useState(examplePlates)
@@ -13,43 +14,23 @@ const QuickView = () => {
     const {value} = event.target
     const texts = value.toUpperCase().split(',')
 
-    if (texts.length === plates.length) {
-      // Update text of the last element
-      const newPlate = {
-        text: texts[texts.length - 1],
-        color: plates[plates.length - 1].color,
-      }
-      setPlates([...plates.slice(0, -1), newPlate])
-    } else if (texts.length < plates.length) {
-      const slice = plates.slice(0, -1)
-      const newPlate = {
-        text: texts[texts.length - 1],
-        color: slice[slice.length - 1].color,
-      }
-      setPlates([...slice.slice(0, -1), newPlate])
-    } else {
-      const newPlate: PlateType = {
-        text: texts[texts.length - 1],
-        color: colors[Math.floor(Math.random() * colors.length)],
-      }
-      setPlates([...plates, newPlate])
+    const newPlates: PlateType[] = []
+    for (let i = 0; i < texts.length; i++) {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)]
+      newPlates.push({
+        text: texts[i],
+        color: i < plates.length ? plates[i].color : randomColor,
+      })
     }
+    setPlates(newPlates)
   }
 
   return (
     <>
       <Row>
-        <textarea
+        <TextArea
           value={plates.map(({text}) => text).join(',')}
           onChange={handleChange}
-          rows={7}
-          maxLength={300}
-          style={{
-            width: '100%',
-            maxWidth: '50ch',
-            resize: 'none',
-            fontSize: '12px',
-          }}
         />
         <Row flexWrap="wrap">
           {plates.map(({text, color}) => (
