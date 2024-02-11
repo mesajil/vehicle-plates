@@ -1,7 +1,12 @@
+import FullWidthContainer from './components/Containers/FullWithContainer'
+import QuickView from './components/QuickView'
+
 function App() {
   return (
     <>
-      <div>Hello Vite</div>
+      <FullWidthContainer>
+        <QuickView />
+      </FullWidthContainer>
     </>
   )
 }
